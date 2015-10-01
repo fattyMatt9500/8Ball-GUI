@@ -1,23 +1,29 @@
 # !/usr/bin/python
-#
-# **********
-#
-# Programmer: Matthew Griffin
-#
-# **********
-#
-# IDEA: A magic 8-ball program that randomly chooses a phrase after
-# the user asks a yes/no question
-#
-# **********
-#
+'''
+**********
+
+Programmer: Matthew Griffin
+
+**********
+
+IDEA: A magic 8-ball program that randomly chooses a phrase after
+the user asks a yes/no question
+
+**********
+
+EXTRAS IDEAS:
+- Put functions into a class
+- Make the UI look nicer
+- Add more answers to the 'list' variable
+
+'''
 # Importing stuff
 import time # Making the pause effect
 import random # For getting the random results
 import sys # For exiting the program
 from Tkinter import * # For creating the GUI, imports everything
 
-list = ["Definitly", "Maybe", "Ask a friend", "Definitly...Not!", "Try Again"] # The list of random phrases that can be used
+answers = ["Definitly", "Maybe", "Ask a friend", "Definitly...Not!", "Try Again"] # The list of random phrases that can be used
 window = Tk() # Creating the window variable
 
 # The window class - this function creates the window, and is called first; It is the class that handles the boring stuff
@@ -49,7 +55,7 @@ def Main():
 # This is the logic function - this function is called when the 'Enter' button is pressed	
 def Logic():
 	time.sleep(3) # Creates a 'Thinking...' effect
-	FinalAnswer = Label(window, text = random.choice(list)).grid(row = 4, column = 0) # Displays the final answer to the GUI
+	FinalAnswer = Label(window, text = random.choice(answers)).grid(row = 4, column = 0) # Displays the final answer to the GUI
 
 Window() # Calls the 'Window()' function
 window.mainloop() # Constanly updates the window
